@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer class="site-footer">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'vsb-theme' ) ); ?>"><?php
 				/* translators: %s: CMS name, i.e. WordPress. */
@@ -22,10 +22,10 @@
 			<span class="sep"> | </span>
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'vsb-theme' ), 'vsb-theme', '<a href="http://underscores.me/">Cryden</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'vsb-theme' ), 'vsb-theme', '<a href="http://underscores.me/">CRYDEsigN</a>' );
 			?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+		</div>
+	</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
