@@ -1,10 +1,12 @@
+try {
+    window.$ = window.jQuery = require('jquery');
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+    require('./../../node_modules/bootstrap/dist/js/bootstrap.min.js');
+} catch (e) {}
 
-require('./bootstrap');
 
-console.log('script init');
+//require('./../../node_modules/jquery/dist/jquery.min.js');
+console.log('script inits');
+
+//require('./../../node_modules/bootstrap/dist/js/bootstrap');
+//console.log('script init');

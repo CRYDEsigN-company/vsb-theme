@@ -1,0 +1,212 @@
+body
+	color: $text
+	background: $background
+
+a, a:hover
+	text-decoration: none
+
+.card-img-top
+	width: 100%
+	height: auto
+	border-top-left-radius: 0
+	border-top-right-radius: 0
+
+.navbar
+	padding: 0	
+	border-bottom: 1px solid $border
+	background: $main
+	min-height: 100px
+
+.navbar-light .navbar-toggler
+	border: none
+
+.navbar-collapse
+	background: $main
+	padding: 20px
+	border-left: 60px solid $second
+	justify-content: flex-end
+
+.site-header
+	height: 100px
+
+	.site-branding
+		flex-basis: 60%
+		height: 100px
+		display: flex
+		flex-direction: column
+		margin-right: 15px
+		justify-content: space-between
+		
+		h1, p
+			margin: 0
+			font-size: 1em
+		
+		.title-block
+			margin-top: 20px
+			display: flex
+			flex-direction: column
+
+			.site-title a
+				color: $header
+				font-size: 28px
+				font-weight: 600
+
+
+			.site-description
+				color: $text
+				font-size: 14px
+
+		.title-line
+			background-color: $second
+			width: 60px
+			height: 4px
+	a 
+		color: $header
+		text-transform: uppercase
+		font-size: 18px
+
+	.active a
+		font-weight: 600
+
+[class^="col-"], [class*=" col-"]
+	padding-left: 10px 
+	padding-right: 10px 
+
+.card
+	margin-top: 20px
+	border-radius: 0
+
+.widget_archive ul
+	list-style-type: none
+	-webkit-padding-start: 15px
+	li 
+		margin-top: 12px
+		margin-bottom: 24px
+	a 
+		color: $text 
+		font-size: 16px
+
+.dsq-widget-list
+	-webkit-padding-start: 10px
+.dsq-widget-user a
+	color: $second
+.dsq-widget-comment
+	font-size: 14px
+	color: $text
+	font-weight: normal
+.dsq-widget-meta a
+	font-size: 12px
+	color: $second
+	font-weight: normal
+		
+#searchform
+	margin-top: 20px
+
+.widget-title
+	margin-top: 15px
+	font-size: 18px
+	color: $header
+	border-bottom: 1px solid $second
+	line-height: 30px
+	display: -webkit-inline-box
+
+.btn-danger
+	background-color: $second
+	border-radius: 0
+
+#content 
+	min-height: calc(100vh - 160px)
+
+.site-footer
+	width: 100%
+	height: 60px
+	margin-top: 20px
+	background-color: #808080
+	.site-footer-info
+		display: flex
+		justify-content: space-between
+
+	.site-info
+		color: $main 
+		line-height: 60px
+		display: flex
+	.site-social
+		display: flex
+		color: $main 
+		margin-top: 15px
+		font-size: 30px
+
+.post-date
+	font-size: 28px
+	font-weight: 600
+	color: #b3b3b3
+	text-align: center
+
+.post-month
+	font-size: 14px
+	font-weight: 600
+	color: #b3b3b3
+	text-align: center
+	text-transform: uppercase
+
+.post-title
+	font-size: 16px
+	color: $header
+
+.post-author
+	font-size: 12px
+	color: $text
+	margin-bottom: 16px
+
+.taged, .taged a
+	color: $second
+	font-size: 14px
+
+.post-tags
+	margin-bottom: 16px
+
+.pagination-block
+	margin-top: 20px
+	display: flex
+	justify-content: center
+
+.pagination
+	margin-bottom: 0
+
+.page-numbers
+	@extend .page-link
+	color: $text
+
+.page-item.active .page-link, .page-item.active .page-numbers
+    z-index: 2
+    color: #fff
+    background-color: $second
+    border-color: $second
+
+.page-item:first-child .page-link, .page-item:first-child .page-numbers
+    margin-left: 0
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+
+.page-item:last-child .page-link, .page-item:last-child .page-numbers
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+
+.quote
+	color: $second
+
+.quote-author
+	color: #b3b3b3
+	font-style: italic
+	text-align: right
+	margin-right: 20px
+
+@media (min-width: 991px)
+	.navbar-collapse
+		border-left: none
+		padding: 0
+	.site-branding
+		.title-block
+			margin-top: 15px
+	.nav li 
+		margin-left: 30px

@@ -11,20 +11,9 @@
 <div class="card">
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<?php 
 
-$default_attr = array(
-	'src'   => $src,
-	'class' => "card-img-top",
-	'alt'   => trim(strip_tags( $attachment->post_excerpt )),
-	'title' => trim(strip_tags( $attachment->post_title )),
-);
-
-$thumbnail = get_the_post_thumbnail( null, full, $default_attr );
-echo $thumbnail;
-?>
-
-<div class="card-body row">
+<div class="card-body">
+<div class="row">
 	<div class="post-fulldate col-2">
 		<div class="post-date"><?php the_time('j'); ?></div>
 		<div class="post-month"><?php the_time('F'); ?></div>
@@ -36,10 +25,14 @@ echo $thumbnail;
 			</h2>
 		</div>
 		<div class="post-author">Автор: <?php the_author(); ?></div>
-		<div class="post-tags"><?php the_tags( '<span class="taged">#', '</span> <span class="taged">#', '</span>'); ?></div>
-		<div class="post-excerpt"><?php the_excerpt(); ?></div>
-		<a class="btn btn-secondary btn-danger float-right" href="<?php the_permalink(); ?>" role="button">Читать...</a>
+		<div class="post-tags"><?php the_tags( '<span class="tag">#', '</span> <span class="tag">#', '</span>'); ?></div>
 	</div>
+	</div>
+</div>
+<div class="card-body">
+
+	<div class="post-excerpt"><?php the_content(); ?></div>
+
 </div>
 </article><!-- #post-<?php the_ID(); ?> -->
 </div>

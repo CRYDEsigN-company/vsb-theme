@@ -11,7 +11,7 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.js(  'resources/js/main.js',      'public/js/main.js')
+mix//.js('resources/js/main.js', 'public/js/main.js')
    .sass('resources/sass/style.scss', 'public/css/style.css')
    .options({
 //   extractVueStyles: false, // Extract .vue component styling to file, rather than inline.
@@ -20,4 +20,4 @@ mix.js(  'resources/js/main.js',      'public/js/main.js')
 //   uglify: {}, // Uglify-specific options. https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
 //   postCss: [] // Post-CSS options: https://github.com/postcss/postcss/blob/master/docs/plugins.md
   })
-   .sass();
+   .sass().js();

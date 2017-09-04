@@ -8,13 +8,10 @@
 	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 
 	&:focus {
-		background-color: $color__background-screen;
 		border-radius: 3px;
 		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 		clip: auto !important;
-		color: $color__text-screen;
 		display: block;
-		@include font-size(0.875);
 		font-weight: bold;
 		height: auto;
 		left: 5px;
@@ -31,3 +28,28 @@
 #content[tabindex="-1"]:focus {
 	outline: 0;
 }
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.aligncenter {
+	clear: both;
+	@include center-block;
+}
+

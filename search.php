@@ -9,7 +9,9 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
+<div class="row">
+<div class="col-lg-8">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 		<?php
@@ -44,8 +46,15 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
-	</section><!-- #primary -->
-
+	</div><!-- #primary -->
+</div>
+<div class="col-lg-4">
+<div class="card">
+<div class="card-body">
 <?php
-get_sidebar();
+get_sidebar();?>
+</div>
+</div>
+</div>
+<?php
 get_footer();

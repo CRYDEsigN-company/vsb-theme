@@ -14,6 +14,8 @@
 
 get_header(); ?>
 
+<div class="row">
+<div class="col-lg-8">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -36,12 +38,21 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+
+				$template_part = get_post_format();
+				//echo $template_part;
+				get_template_part( 'template-parts/content', $template_part );
 
 			endwhile;
+?>
+<nav class="pagination-block" aria-label="Page navigation example">
+<?php
+			//wp_corenavi();
+			sa_bootstrap_paginate_links();
 
-			the_posts_navigation();
-
+?>
+</nav>
+<?php
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
@@ -50,7 +61,14 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+</div>
+<div class="col-lg-4">
+<div class="card">
+<div class="card-body">
 <?php
-get_sidebar();
+get_sidebar();?>
+</div>
+</div>
+</div>
+<?php
 get_footer();
