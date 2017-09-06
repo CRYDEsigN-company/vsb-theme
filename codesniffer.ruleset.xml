@@ -23,10 +23,16 @@
 	<file>.</file>
 
 	<!-- Include the WordPress ruleset, with exclusions. -->
-	<rule ref="WordPress">
-		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+	<rule ref="WordPress-Core">
 		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+
+		<exclude name="Squiz.Commenting.FileComment.SpacingAfterComment" />
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
+		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
+		<exclude name="Squiz.Commenting.InlineComment.NotCapital" />
 	</rule>
 
 	<!-- Verify that the text_domain is set to the desired text-domain.
@@ -54,6 +60,10 @@
 		</properties>
 	</rule>
 
+	<rule ref="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing">
+		<severity>0</severity>
+	</rule>
+	
 	<!-- Include sniffs for PHP cross-version compatibility. -->
 	<config name="testVersion" value="5.2-99.0"/>
 	<rule ref="PHPCompatibility"/>
