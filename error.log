@@ -878,3 +878,19 @@
  in Unknown on line 0
 [06-Sep-2017 06:16:19 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ext\php_mysql.dll' - Не найден указанный модуль.
  in Unknown on line 0
+[06-Sep-2017 06:36:00 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ext\php_mongo.dll' - Не найден указанный модуль.
+ in Unknown on line 0
+[06-Sep-2017 06:36:00 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ext\php_mysql.dll' - Не найден указанный модуль.
+ in Unknown on line 0
+[06-Sep-2017 06:36:04 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ext\php_mongo.dll' - Не найден указанный модуль.
+ in Unknown on line 0
+[06-Sep-2017 06:36:04 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ext\php_mysql.dll' - Не найден указанный модуль.
+ in Unknown on line 0
+[06-Sep-2017 06:36:13 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ext\php_mongo.dll' - Не найден указанный модуль.
+ in Unknown on line 0
+[06-Sep-2017 06:36:13 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ext\php_mysql.dll' - Не найден указанный модуль.
+ in Unknown on line 0
+[06-Sep-2017 06:36:13 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ext\php_mongo.dll' - Не найден указанный модуль.
+ in Unknown on line 0
+[06-Sep-2017 06:36:13 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'ext\php_mysql.dll' - Не найден указанный модуль.
+ in Unknown on line 0
