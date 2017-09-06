@@ -3,6 +3,7 @@
     "fileExtensions": [ ".js" ],
     "excludeFiles": [
         "js/html5.js",
-        "public/js/main.js"
+        "public/js/main.js",
+        "webpack.mix.js"
     ]
 }

@@ -4,4 +4,3 @@ try {
 } catch ( e ) {}
 
 console.log( 'script inits' );
-

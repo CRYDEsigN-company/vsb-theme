@@ -20,7 +20,8 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<?php
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) :
+				the_post();
 
 				get_template_part( 'template-parts/content', 'page' );
 
@@ -38,8 +39,7 @@ get_header(); ?>
 <div class="col-lg-4">
 <div class="card">
 <div class="card-body">
-<?php
-get_sidebar();?>
+<?php get_sidebar(); ?>
 </div>
 </div>
 </div>
