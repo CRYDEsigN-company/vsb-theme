@@ -1,11 +1,12 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/font-awesome/scss/font-awesome";
-//@import "node_modules/bootstrap/scss/bootstrap-grid";
-
-//@import "node_modules/bootstrap/scss/nav";
-//@import "node_modules/bootstrap/scss/navbar";
 
 @import "underscores_style";
 @import "variables";
 @import "fonts";
+@import "base";
 @import "header";
+@import "content";
+@import "card";
+@import "widget";
+@import "footer";

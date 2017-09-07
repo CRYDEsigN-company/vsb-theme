@@ -21,7 +21,7 @@
 <body <?php body_class(); ?>>
 <header>
 	<div class="site-header ">
-		<nav class="navbar navbar-expand-lg navbar-light justify-content-between sticky-top">
+		<nav class="navbar navbar-expand-lg navbar-light justify-content-between fixed-top">
 			<div class="container">
 				<div class="site-branding">
 					<div class="title-block">

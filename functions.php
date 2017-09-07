@@ -97,14 +97,14 @@ function sa_get_bootstrap_paginate_links() {
 				) );
 			?>
 			<?php if ( ! empty( $pagination ) ) : ?>
-				<ul class="pagination">
-					<?php foreach ( $pagination as $key => $page_link ) : ?>
-						<li class="page-item <?php if ( strpos( $page_link, 'current' ) !== false ) : echo 'active'; endif; ?> ">
-							<?php echo $page_link; ?>
-						</li>
-					<?php endforeach; ?>
-				</ul>
-				<?php endif; ?>
+			<ul class="pagination">
+				<?php foreach ( $pagination as $key => $page_link ) : ?>
+					<li class="page-item <?php if ( strpos( $page_link, 'current' ) !== false ) : echo 'active'; endif; ?> ">
+						<?php echo $page_link; ?>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+			<?php endif; ?>
 		</div>
 	<?php
 	$links = ob_get_clean();

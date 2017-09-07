@@ -97,13 +97,13 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$atts = array();
 
 				if ( empty( $item->attr_title ) ) {
-					$atts['title']  = ! empty( $item->title )   ? strip_tags( $item->title ) : '';
+					$atts['title']  = ! empty( $item->title ) ? strip_tags( $item->title ) : '';
 				} else {
 					$atts['title'] = $item->attr_title;
 				}
 
 				$atts['target'] = ! empty( $item->target ) ? $item->target : '';
-				$atts['rel']    = ! empty( $item->xfn )    ? $item->xfn    : '';
+				$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
 				// If item has_children add atts to a.
 				if ( $args->has_children && 0 === $depth ) {
 					$atts['href']           = '#';

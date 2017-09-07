@@ -28,41 +28,42 @@ get_header(); ?>
 								</h2>
 							</div>
 
-							<div class="row content">
-								<p>Электронная почта:</p>
-								<p>Общие вопросы: <strong><a href="mailto:mail@fun-wiki.xyz">mail@fun-wiki.xyz</a></strong></p>
-								<p>Реклама: <strong><a href="mailto:reklama@fun-wiki.xyz">reklama@fun-wiki.xyz</a></strong></p>
-								<p>Присоединиться к команде: <strong><a href="mailto:mail@fun-wiki.xyz">mail@fun-wiki.xyz</a></strong></p><br>
-							</div>
-							<script src="<?php bloginfo( 'template_url' ); ?>/js/libs/jquery.form.js"></script>
+							<?php
+							while ( have_posts() ) :
+								the_post();
+							?>
+								<div class="row card-body">
+									<div class="post-excerpt"><?php the_content(); ?></div>
+								</div>
+							<?php
+							endwhile;
+							?>
 
-							<div class="row content">
-								<p>Также вы можете воспользоваться контактной формой:</p><br>
-								<form id="contact_form">
-									<div class="row">
-										<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 form-group">
-											<label>Ваше имя</label>
-											<input type="text" name="name" class="form-control" required placeholder="Введите ваше имя"/>
-										</div>
-										<div class="col-lg-offset-1 col-md-offset-1 col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
-											<label>e-mail</label>
-											<input type="email" name="email" class="form-control" required placeholder="Введите ваш e-mail" />
-										</div>
+							<div class="row card-body">
+								<form id="contact_form" class="row">
+									<label class="form-group card-body text-center">Также вы можете воспользоваться контактной формой:	</label>
+									<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+										<label>Ваше имя</label>
+										<input type="text" name="name" class="form-control" required placeholder="Введите ваше имя"/>
 									</div>
-									<div class="form-group">
+									<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
+										<label>e-mail</label>
+										<input type="email" name="email" class="form-control" required placeholder="Введите ваш e-mail" />
+									</div>
+									<div class="form-group col-12">
 										<label>Тема сообщения</label>
 										<input type="text" name="subject" class="form-control" placeholder="Введите тему сообщения" />
 									</div>
-									<div class="form-group">
+									<div class="form-group col-12">
 										<label>Сообщение</label>
-										<textarea name="message" class="form-control" required placeholder="Введите текст сообщения"></textarea>
+										<textarea name="message" class="form-control" required placeholder="Введите текст сообщения" rows="5"></textarea>
 									</div>
-									<div class="form-group">
-										<input class="form-btn_send center-block" type="submit" value="Отправить" onclick="send();" />
+									<div class="form-group  mx-auto">
+										<button type="submit" class="btn btn-secondary btn-danger">Отправить</button>
 									</div>
 								</form>
 							</div>
-							<div class="feedback_error_block">
+							<div class="feedback_error_block mx-auto text-center">
 								<div id="feedback_error"></div>
 							</div>
 

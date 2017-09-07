@@ -10,7 +10,7 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/main.js', 'js/main.js')
+mix//.js('resources/js/main.js', 'js/main.js')
    .sass('resources/sass/style.scss', 'css/style.css')
    .options({
 //   extractVueStyles: false, // Extract .vue component styling to file, rather than inline.

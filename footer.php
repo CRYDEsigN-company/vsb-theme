@@ -10,24 +10,19 @@
  */
 
 ?>
-</div>
-	</div><!-- #content -->
+
+		</div>
+	</div>
 </div>
 	<footer class="site-footer">
-	<div class="container">
-	<div class="row site-footer-info">
-		<div class="site-info">
-			by CRYDEsigN. 2017
+		<div class="container">
+			<div class="site-footer-info">
+				<div class="site-info">by CRYDEsigN. 2017</div>
+				<div class="site-social"><i class="fa fa-vk" aria-hidden="true"></i></div>
+			</div>
 		</div>
-		<div class="site-social">
-			<i class="fa fa-vk" aria-hidden="true"></i>
-		</div>
-	</div>
-	</div>
 	</footer>
 </div><!-- #page -->
-
 <?php wp_footer(); ?>
-
 </body>
 </html>
