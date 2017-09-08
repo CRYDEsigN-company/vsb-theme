@@ -12,8 +12,8 @@ const {
  |
  */
 
-mix.js('resources/js/main.js', 'js/main.js')
-  .sass( 'resources/sass/style.scss', 'css/style.css' )
+mix.js('sources/js/main.js', 'js/main.js')
+  .sass( 'sources/sass/style.scss', 'css/style.css' )
   .options({
 
     //   ExtractVueStyles: false, // Extract .vue component styling to file, rather than inline.
