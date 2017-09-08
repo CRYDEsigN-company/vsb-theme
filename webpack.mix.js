@@ -12,7 +12,7 @@ const {
  |
  */
 
-mix //.js('resources/js/main.js', 'js/main.js')
+mix.js('resources/js/main.js', 'js/main.js')
   .sass( 'resources/sass/style.scss', 'css/style.css' )
   .options({
 
