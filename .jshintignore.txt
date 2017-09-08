@@ -1,2 +1,0 @@
-js/html5.js
-public/js/main.js

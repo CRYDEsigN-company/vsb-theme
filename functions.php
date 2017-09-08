@@ -1,10 +1,17 @@
 <?php
 /**
- * The template for displaying archive pages
+ * Autoloads files for PHP_CodeSniffer and tracks what has been loaded.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * Due to different namespaces being used for custom coding standards,
+ * the autoloader keeps track of what class is loaded after a file is included,
+ * even if the file is ultimately included by another autoloader (such as composer).
  *
- * @package vsb
+ * This allows PHP_CodeSniffer to request the class name after loading a class
+ * when it only knows the filename, without having to parse the file to find it.
+ *
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2015 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
  */
 
 require_once get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
@@ -140,4 +147,39 @@ function crb_attach_post_meta() {
 			Field::make( 'text', 'crb_author', 'Автор' ),
 		) );
 }
+
+/*
+* Create menu
+*/
+
+$menu_name = 'Site Menu';
+$menu_exists = wp_get_nav_menu_object( $menu_name );
+
+// If it doesn't exist, let's create it.
+if ( ! $menu_exists ) {
+	$menu_id = wp_create_nav_menu( $menu_name );
+
+	// Set up default menu items.
+	wp_update_nav_menu_item( $menu_id, 0, array(
+		'menu-item-title' => __( 'Главная' ),
+		'menu-item-classes' => 'home',
+		'menu-item-url' => home_url( '/' ),
+		'menu-item-status' => 'publish',
+		)
+	);
+	wp_update_nav_menu_item($menu_id, 0, array(
+		'menu-item-title' => __( 'Контакты' ),
+		'menu-item-url' => home_url( '/contacts/' ),
+		'menu-item-status' => 'publish',
+		)
+	);
+
+	wp_update_nav_menu_item($menu_id, 0, array(
+		'menu-item-title' => __( 'Об авторе' ),
+		'menu-item-url' => home_url( '/about/' ),
+		'menu-item-status' => 'publish',
+		)
+	);
+}
+
 ?>

@@ -42,6 +42,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<?php
 						wp_nav_menu( array(
+							'menu'           => 'Site Menu',
 							'theme_location' => 'menu-1',
 							'menu_id'        => 'primary-menu',
 							'menu_class'     => 'nav navbar-nav',
