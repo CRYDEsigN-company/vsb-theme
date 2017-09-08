@@ -1,8 +1,8 @@
 # Travis CI configuration file.
 # @link https://travis-ci.org/
 
-# For use with the Twenty Sixteen WordPress theme
-# @link https://github.com/WordPress/twentysixteen/
+# For use with the Twenty Seventeen WordPress theme
+# @link https://github.com/WordPress/twentyseventeen/
 
 # Declare project language and PHP versions to test against.
 # @link http://about.travis-ci.org/docs/user/languages/php/
@@ -12,8 +12,11 @@ language: php
 php:
     - "7.0"
     - "5.6"
+    - "5.5"
+    - "5.4"
+    - "5.3"
     # Current $required_php_version for WordPress: 5.2.4
-#   - "5.2"
+    - "5.2"
 
 # Ditch sudo and use containers.
 # @link http://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
@@ -23,15 +26,9 @@ sudo: false
 # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
 env:
-    # Trunk (current version in development is 4.4)
+    # Trunk (current version in development is 4.7)
     # @link https://github.com/WordPress/WordPress
     - WP_VERSION=master WP_MULTISITE=0
-
-matrix:
-  include:
-    # Arbitrary PHP version to run the sniffs against.
-    - php: '7.0'
-      env: SNIFF=1
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
@@ -42,7 +39,7 @@ before_script:
     - mkdir -p $WP_DEVELOP_DIR
     # Use the Git mirror of WordPress.
     - git clone --depth=1 --branch="$WP_VERSION" git://develop.git.wordpress.org/ $WP_DEVELOP_DIR
-    # Set up Twenty Sixteen theme information.
+    # Set up Twenty Seventeen theme information.
     - theme_slug=$(basename $(pwd))
     - theme_dir=$WP_DEVELOP_DIR/src/wp-content/themes/$theme_slug
     - cd ..
@@ -57,26 +54,14 @@ before_script:
     # Create WordPress database.
     - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
     # Install CodeSniffer for WordPress Coding Standards checks.
-    # - mkdir php-codesniffer && curl -L https://github.com/squizlabs/PHP_CodeSniffer/archive/master.tar.gz | tar xz --strip-components=1 -C php-codesniffer
+    - mkdir php-codesniffer && curl -L https://github.com/squizlabs/PHP_CodeSniffer/archive/master.tar.gz | tar xz --strip-components=1 -C php-codesniffer
     # Install WordPress Coding Standards.
-    ### - mkdir wordpress-coding-standards && curl -L https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/archive/master.tar.gz | tar xz --strip-components=1 -C wordpress-coding-standards
-    ##- git clone -b master https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git wpcs
+    - mkdir wordpress-coding-standards && curl -L https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/archive/master.tar.gz | tar xz --strip-components=1 -C wordpress-coding-standards
     # Hop into CodeSniffer directory.
-    #- cd php-codesniffer
+    - cd php-codesniffer
     # Set install path for WordPress Coding Standards
     # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
-    #- phpcs --config-set installed_paths wpcs
-
-    - if [[ "$SNIFF" == "1" ]]; then export PHPCS_DIR=/tmp/phpcs; fi
-    - if [[ "$SNIFF" == "1" ]]; then export SNIFFS_DIR=/tmp/sniffs; fi
-    # Install PHP CodeSniffer.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
-    # Install WordPress Coding Standards.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $SNIFFS_DIR; fi
-    # Set install path for WordPress Coding Standards.
-    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --config-set installed_paths $SNIFFS_DIR; fi
-    # After CodeSniffer install you should refresh your path.
-    - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
+    - scripts/phpcs --config-set installed_paths ../wordpress-coding-standards
     # Hop into themes directory.
     - cd $theme_dir
     # After CodeSniffer install you should refresh your path.
@@ -108,5 +93,4 @@ script:
     # -n flag: Do not print warnings (shortcut for --warning-severity=0)
     # --standard: Use WordPress as the standard.
     # --extensions: Only sniff PHP files.
-    #- $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
-    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs -p . --standard=WordPress; fi
+    - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
